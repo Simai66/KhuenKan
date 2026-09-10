@@ -1,0 +1,1 @@
+-- No demo users or debts are inserted. Register real local test accounts in the UI.

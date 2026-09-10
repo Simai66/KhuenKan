@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@theme {
+  --color-ink: #18243b;
+  --color-brand: #3159dd;
+  --color-paper: #f3f6fb;
+}
+:root {
+  color-scheme: light;
+}
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: Arial, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+:focus-visible {
+  outline: 3px solid #6384ff;
+  outline-offset: 3px;
+}
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-slate-200 bg-white p-5 md:p-7;
+  }
+  .field {
+    @apply block w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-base;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 font-semibold text-white transition hover:bg-blue-800 disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-4 py-2.5 font-medium hover:bg-slate-50;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+  .page-title {
+    @apply text-2xl font-bold tracking-tight md:text-3xl;
+  }
+}
