@@ -1,5 +1,7 @@
 # ผลตรวจสอบ
 
+> ตารางด้านล่างบันทึกผลทดสอบในสภาพแวดล้อมพัฒนาครั้งแรก ก่อนเชื่อม Supabase Cloud ส่วนผลตรวจหลัง deploy ดูใน [Deployment status](DEPLOYMENT.md) การผ่าน build และ SQL tests ไม่ได้ยืนยัน flow จริงครบวงจร
+
 ตรวจในสภาพแวดล้อม Node.js 24.19.0 โดยใช้ dependencies ที่ pin ใน package-lock.json
 
 | รายการ              | ผล                                                                                    |
@@ -31,7 +33,7 @@
 
 ## ยังยืนยันไม่ได้
 
-ยังไม่ได้เชื่อมกับ Supabase project จริง และไม่มี Docker จึงยังไม่ได้ทดสอบ Supabase Auth/Storage HTTP services, email confirmation, cookie refresh กับบัญชีจริง, การเปิด signed URL จริง หรือ `pg_cron` extension/job บน Supabase
+ในการทดสอบครั้งแรกยังไม่ได้เชื่อมกับ Supabase project จริง และไม่มี Docker จึงไม่ได้ทดสอบ Supabase Auth/Storage HTTP services, email confirmation, cookie refresh กับบัญชีจริง, การเปิด signed URL จริง หรือ `pg_cron` extension/job บน Supabase
 
 PGlite ใช้ PostgreSQL engine จริงและทดสอบ SQL/RLS/transactions แต่ตาราง auth/storage เป็น test fixtures, ไม่มี bank/payment provider และไม่ใช่การทดสอบภาระพร้อมกันหลาย connection
 
